@@ -45,10 +45,11 @@ class TestForms(TestCase):
   #ATTENDANCE CODE
     def test_AttendanceCode_form_valid_data(self):
             form = AttendanceCodeForm(data={
-                'code': 21474,
-                'keaclass': self.Class,
+                'code': 2147444,
+                'keaclass': "SDi21",
                 'subject': self.Subject,
                 })
+            print(self.Subject)
             self.assertTrue(form.is_valid())
     
     def test_AttendanceCode_form_invalid_data(self):
