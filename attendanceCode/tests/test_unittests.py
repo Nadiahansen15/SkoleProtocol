@@ -69,8 +69,6 @@ class TestForms(TestCase):
             "keaclass":"test_class1",
             "subject":"test_subject1"
         }
-
-
     def test_view(self):
         login = c.login(username='Andrea44', password='Mor12345')
         response = c.post("/accounts/login/", {
