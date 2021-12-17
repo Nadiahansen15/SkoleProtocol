@@ -31,7 +31,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
     username.send_keys('andrea44')
     password.send_keys('Mor12345')
 
-    self.assertIsNotNone(username, 'No Username input')
+    self.assertIsNotNone(username, 'No Username input') # If input pass
     self.assertIsNotNone(password, 'No Password input')    
 
     driver.implicitly_wait(3)
