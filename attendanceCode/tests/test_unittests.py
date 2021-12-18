@@ -112,17 +112,16 @@ class TestForms(TestCase):
         })
         self.assertEqual(response.status_code, 302) 
 
-    def test_get_statstic_(self):
+    def test_get_statstic(self):
         result = func.get_statstic("SDi21", "1")
         self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
     
-    '''
+
     def test_get_star(self):
         result = func.get_statstic("SDi21111", "1")
-        print(result, "bohho")
-        #self.assertFalse(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
+        self.assertEqual(result, [])
         
-        
+    ''' 
     def test_test(self):
         view_url = reverse("create attendance code")
         expected_in_output = 'A1b2c9'
