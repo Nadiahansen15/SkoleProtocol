@@ -117,9 +117,13 @@ class TestForms(TestCase):
         self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
     
 
-    def test_get_star(self):
+    def test_get_statstic_with_wrong_input(self):
         result = func.get_statstic("SDi21111", "1")
         self.assertEqual(result, [])
+    
+    def test_get_statstic_class(self):
+        result = func.get_statstic_class("SDi21")
+        self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
         
     ''' 
     def test_test(self):
