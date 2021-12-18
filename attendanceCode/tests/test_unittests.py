@@ -102,21 +102,11 @@ class TestForms(TestCase):
         code = response.status_code
         self.assertEqual(code, 200)
 
-    def test_post_method(self):
-        c = Client()
-        url=reverse("create attendance code")
-        response = c.post(url, {
-            'code':'777',
-            'keaclass':'SDi21',
-            'subject':'1'
-        })
-        self.assertEqual(response.status_code, 302) 
-
+    # IF/ELSE SEARCH
     def test_get_statstic(self):
         result = func.get_statstic("SDi21", "1")
         self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
     
-
     def test_get_statstic_with_wrong_input(self):
         result = func.get_statstic("SDi21111", "1")
         self.assertEqual(result, [])
@@ -125,17 +115,6 @@ class TestForms(TestCase):
         result = func.get_statstic_class("SDi21")
         self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
         
-    ''' 
-    def test_test(self):
-        view_url = reverse("create attendance code")
-        expected_in_output = 'A1b2c9'
-        data = {
-            'code':'777',
-            'keaclass':'SDi21',
-            'subject':'1'
-        }
-            # stuff that will satisfy form.is_valid(), but fail the tests
-            # in your form_valid method
-        response=c.post( view_url, data)   
-        self.assertIn(expected_in_output, response.content.decode() )
-        '''
+    def test_get_statstic_class_with_wrong_input(self):
+        result = func.get_statstic_class("SDi21111")
+        self.assertEqual(result, []) 
