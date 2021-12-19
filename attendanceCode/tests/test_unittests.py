@@ -108,7 +108,7 @@ class TestForms(TestCase):
         self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
     
     def test_get_statstic_with_wrong_input(self):
-        result = func.get_statstic("SDi21111", "1")
+        result = func.get_statstic("SDi21", "2")
         self.assertEqual(result, [])
     
     def test_get_statstic_class(self):
