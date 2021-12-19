@@ -61,7 +61,7 @@ class TestForms(TestCase):
 
     def test_AttendanceCode_create_code_is_correct(self):
         attendancecode = AttendanceCode.objects.create(code= -9144444, keaclass= self.Class, subject=self.Subject)
-        response = self.client.get(reverse('create attendance code'), kwargs={'code':attendancecode.code})
+        response = self.client.post(reverse('create attendance code'), kwargs={'code':attendancecode.code})
         self.assertEqual(response.status_code, 200)
         self.assertEqual(AttendanceCode.objects.last().code, -9144444)
     
@@ -71,10 +71,12 @@ class TestForms(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(AttendanceLog.objects.last().date, date.today())
 
+    #Tester hele flow, fordi det er attendance log
     def test_post_new_attendance_log(self):
         response = self.client.post(reverse('create attendance log'), data={'code': "-1555555", 'keaclass':"SDi21", 'subject':'Testing'})
         self.assertEqual(response.status_code, HTTPStatus.OK)
     
+    #De 3 sidste mangler et field, så de fejler --> Pass
     def test_attendance_code_Form_code_is_required(self):
         response = self.client.post(reverse('create attendance code'), {'keaclass':"SDi21", 'subject':'Testing'})
         self.assertFormError(response, 'form', 'code', 'This field is required.')

@@ -2,10 +2,10 @@ name: Django CI
 
 on:
   push:
-    branches: [ unittests ]
+    branches: [ Chris_Selenium ]
     paths-ignore: '**/SkoleProtocol/attendanceCode/tests/test_selenium.py'
   pull_request:
-    branches: [ unittests ]
+    branches: [ Chris_Selenium ]
 
 jobs:
   build:

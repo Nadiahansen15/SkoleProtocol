@@ -29,7 +29,7 @@ class AttendanceCodeFormView(CreateView):
     # Checks if data input is valid and saves object
     def form_valid(self, form):
         obj = form.save(commit=False)
-        obj.user = "nadi6548"
+        obj.user = "christian"
         tz_EU = pytz.timezone('Europe/Copenhagen')
         now = datetime.now(tz_EU)
         current_time = now.strftime("%H:%M:%S")
@@ -47,7 +47,7 @@ class AttendanceLogFormView(CreateView):
     # Checks if data input is valid and saves object
     def form_valid(self, form):
         obj = form.save(commit=False)
-        user = "nadi6548"
+        user = "christian"
         obj.date = date.today()
         getClass = Class.objects.get(name=obj.keaclass)
         getCourse = Course.objects.get(name=getClass.Course_name)
