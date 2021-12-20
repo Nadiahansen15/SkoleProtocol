@@ -6,7 +6,7 @@ from django.shortcuts import render
 from keaclass.models import Class
 from student.models import Student
 from subject.models import Subject, StudentHasSubject
-from datetime import da   te
+from datetime import date
 from course.models import Course
 from school.models import School
 import geopy.distance
