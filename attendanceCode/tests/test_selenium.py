@@ -17,7 +17,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
   att_code2 = randrange(500000)
   # Create Attendance Code
   def test1(self):
-    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Desktop/SoftwareDevelopment/Testing/SkoleProtocol/venv/chromedriver")
+    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Downloads/chromedriver-2")
     #Choose your url to visit
     driver.get('http://127.0.0.1:8000/accounts/login/')
     driver.maximize_window() # For maximizing window
@@ -64,7 +64,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
     
   # Student login and registre attencdance code
   def test2(self):
-    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Desktop/SoftwareDevelopment/Testing/SkoleProtocol/venv/chromedriver")
+    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Downloads/chromedriver-2")
     #Choose your url to visit
     driver.get('http://127.0.0.1:8000/accounts/login/')
     driver.maximize_window() # For maximizing window
@@ -142,14 +142,16 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
 
   # Attendance overview
   def test3(self):
-      driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Desktop/SoftwareDevelopment/Testing/SkoleProtocol/venv/chromedriver")
+      driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Downloads/chromedriver-2")
       #Choose your url to visit
       driver.get('http://127.0.0.1:8000/attendancecode/showattendance/')
       driver.maximize_window() # For maximizing window
       driver.implicitly_wait(3) # gives an implicit wait for 5 seconds
       #find the elements you need to submit form
 
-      username = driver.find_element_by_id('id_username')
+      driver.implicitly_wait(3)
+      username = driver.find_element_by_name('username')
+      driver.implicitly_wait(3)
       password = driver.find_element_by_id('id_password')
       login = driver.find_element_by_id("login")
 
@@ -182,7 +184,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
   
   # Login test
   def test4(self):
-      driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Desktop/SoftwareDevelopment/Testing/SkoleProtocol/venv/chromedriver")
+      driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Downloads/chromedriver-2")
       #Choose your url to visit
       driver.get('http://127.0.0.1:8000/accounts/login/')
       driver.maximize_window() # For maximizing window
@@ -262,7 +264,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
 
   # Attendance code test
   def test5(self):
-    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Desktop/SoftwareDevelopment/Testing/SkoleProtocol/venv/chromedriver")
+    driver = webdriver.Chrome(executable_path=r"/Users/christianholm/Downloads/chromedriver-2")
     #Choose your url to visit
     driver.get('http://127.0.0.1:8000/accounts/login/')
     driver.maximize_window() # For maximizing window

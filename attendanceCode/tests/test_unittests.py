@@ -104,8 +104,8 @@ class TestForms(TestCase):
 
     # IF/ELSE SEARCH
     def test_get_statstic(self):
-        result = func.get_statstic("SDi21", "1")
-        self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1})
+        result = func.get_statstic("SDi21", "1") #Insert
+        self.assertEqual(result[0],{'name': 'nadia hansen', 'countAttendance': 1, 'countLessons': 1}) #Expected
     
     def test_get_statstic_with_wrong_input(self):
         result = func.get_statstic("SDi21111", "1")
