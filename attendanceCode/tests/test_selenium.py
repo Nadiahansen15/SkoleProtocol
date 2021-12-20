@@ -134,7 +134,7 @@ class ShowAttendanceTest(LiveServerTestCase, unittest.TestCase):
       submitt.send_keys(Keys.RETURN)
       
       time.sleep(1.5)
-      correct = driver.find_element_by_id('whatever').text
+      correct = driver.find_element_by_id('ok_reg').text
       correct_str = 'you been registered'
       print('Student registered corret code test passed: ', self.assertTrue(correct, correct_str) is None)
 
